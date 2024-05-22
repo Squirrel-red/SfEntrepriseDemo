@@ -16,7 +16,9 @@
     {% for entreprise in entreprises %}
         {# {{ entreprise.raisonSociale ~ ' (' ~ entreprise.cp ~ ' ' ~ entreprise.ville ~ ')'}} <br> #}
         {# <b>{{ entreprise.raisonSociale }}</b> {{' (' ~ entreprise.cp ~ ' ' ~ entreprise.ville ~ ')'}} <br> #}
-        <b>{{ entreprise }}</b><br>
+        
+        {# pour détailler la liste on ajoute le lien #}
+        <a href="{{ path('show_entreprise', {'id': entreprise.id}) }}">{{ entreprise }}</a><br>
     {% endfor %}
 
 {% endblock %}

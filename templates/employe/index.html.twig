@@ -1,12 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}HListe des employés{% endblock %}
+{% block title %}Liste des employés{% endblock %}
 
 {% block body %}
 <h1>Liste des employés</h1>
 
 {% for employe in employes %}
-        <b>{{ employe }}</b><br>
+        {#  pour afficher tous les employés#}
+        {# <b>{{ employe }}</b><br> #}
+
+        {# pour afficher les employés triés sur l'entreprise ou" ils travaillent  dans les ( ...)  #}
+        {# {{ employe }} ({{ employe.entreprise.raisonSociale }}) </br> #}
+
+        {# pour détailler lla liste on ajoute le lien #}
+        <a href="">{{ employe }}</a> ({{ employe.entreprise.raisonSociale }}) </br>
 {% endfor %}
 
 {% endblock %}

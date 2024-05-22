@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail d'une entreprise{% endblock %}
+
+{% block body %}
+    <h1>Détail d'une entreprise</h1>
+
+    {# pour récupérer le nom de l'entreprise  qui est dans le toString  du fichier Entreprise.php}
+    {# et on récupère la raison sociale  #}
+    <h2>{{ entreprise }}</h2>
+    <p>
+        {# Adresse : {{ entreprise.adresse }} {{ entreprise.cp }} {{ entreprise.ville }} #}
+        Adresse : {{ entreprise.adresseComplete }} <br>
+        Date de création : {{  entreprise.dateCreationFr }}
+    </p>
+
+{% endblock %}

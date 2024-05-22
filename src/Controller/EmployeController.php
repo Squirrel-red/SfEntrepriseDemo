@@ -12,7 +12,12 @@ class EmployeController extends AbstractController
     #[Route('/employe', name: 'app_employe')]
     public function index(EmployeRepository $employeRepository): Response
     {
-        $employes = $employeRepository->findAll();
+        // On affiche la liste des employés
+        // $employes = $employeRepository->findAll();
+
+        // On trie les employés sur le nom de famille dans l'ordre croissant
+        //SELECT * FROM employe ORDER BY nom ASC
+        $employes = $employeRepository->findBy([], ['nom' => 'ASC']);
         return $this->render('employe/index.html.twig', [
             'employes'  => $employes
         ]);

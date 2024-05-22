@@ -64,6 +64,11 @@ class Entreprise
         return $this->dateCreation;
     }
 
+    public function getDateCreationFr(): ?string
+    {
+        return $this->dateCreation->format("d-m-Y");
+    }
+
     public function setDateCreation(\DateTimeInterface $dateCreation): static
     {
         $this->dateCreation = $dateCreation;
@@ -107,6 +112,13 @@ class Entreprise
         return $this;
     }
 
+    // on ajoute une méthode pour réunir les données à afficher (c'est plus commode!)
+    // ce n'est pas  la nouvelle propriété
+    public function getAdresseComplete(): ?string
+    {
+        return $this->adresse." ".$this->cp." ".$this->ville;
+    } 
+
     /**
      * @return Collection<int, Employe>
      */
@@ -138,8 +150,13 @@ class Entreprise
     }
 
     // On ajoute cette fonction pour faires les affichage répététifs
+    // public function __toString()
+    // {
+    //     return $this->raisonSociale." (".$this->cp." ".$this->ville.")";
+    // }
+
     public function __toString()
     {
-        return $this->raisonSociale." (".$this->cp." ".$this->ville.")";
+        return $this->raisonSociale;
     }
 }
