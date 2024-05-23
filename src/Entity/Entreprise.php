@@ -64,10 +64,12 @@ class Entreprise
         return $this->dateCreation;
     }
 
+    // on créé cette methode manuellement pour formater dateCreation (templates/entreprise/show.html.twig)
     public function getDateCreationFr(): ?string
     {
         return $this->dateCreation->format("d-m-Y");
     }
+    //
 
     public function setDateCreation(\DateTimeInterface $dateCreation): static
     {
@@ -118,6 +120,7 @@ class Entreprise
     {
         return $this->adresse." ".$this->cp." ".$this->ville;
     } 
+    //
 
     /**
      * @return Collection<int, Employe>
@@ -159,4 +162,5 @@ class Entreprise
     {
         return $this->raisonSociale;
     }
+    //
 }

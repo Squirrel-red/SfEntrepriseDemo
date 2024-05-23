@@ -13,7 +13,7 @@
         {# {{ employe }} ({{ employe.entreprise.raisonSociale }}) </br> #}
 
         {# pour détailler lla liste on ajoute le lien #}
-        <a href="">{{ employe }}</a> ({{ employe.entreprise.raisonSociale }}) </br>
+        <a href="{{ path('show_employe', {'id': employe.id}) }}">{{ employe }}</a> ({{ employe.entreprise.raisonSociale }}) </br>
 {% endfor %}
 
 {% endblock %}

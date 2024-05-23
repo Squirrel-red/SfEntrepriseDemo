@@ -11,7 +11,16 @@
     <p>
         {# Adresse : {{ entreprise.adresse }} {{ entreprise.cp }} {{ entreprise.ville }} #}
         Adresse : {{ entreprise.adresseComplete }} <br>
-        Date de création : {{  entreprise.dateCreationFr }}
+        {# on utilise la notre methode  pour formater et stringuer la date#}
+        {# Date de création : {{  entreprise.dateCreationFr }} #}
+
+        {# autre manière pour formater la date avec le codage twig ( voir le doc twig data filters) #}
+        Date de création : {{  entreprise.dateCreation | date("d.m.Y") }}
     </p>
+
+    <h3>Liste des salariés</h3>
+    {% for employe in entreprise.employes %}
+        
+    {% endfor %}
 
 {% endblock %}
