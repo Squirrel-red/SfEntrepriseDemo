@@ -122,4 +122,12 @@ class Employe
 
             return $this;
         }
+
+        //on ajoute la méthode qui calcule l'age d'un employé
+        public function getAge(): ?string
+        { 
+            $now = new \DateTime();
+            $interval = $this->dateNaissance->diff($now);
+            return $interval->format("%Y");
+        }
 }
